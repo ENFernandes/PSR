@@ -1,35 +1,47 @@
 package org.academiadecodigo.bootcamp;
 
 public class Game {
-    /*Players.wepon p1 = Players.generateWepon();
-    Players.wepon p2 = Players.generateWepon();*/
-    Players w1 = new Players("Relde");
-    Players w2 = new Players("Carol");
+    Players w1 = new Players("Relde ");
+    Players w2 = new Players("HD74 ");
 
     public Game() {
-            System.out.println(w1.name + ": " + w1.wepon + " vs " + " " + w2.name + ": " + w2.wepon);
-            switch (w1.wepon + " vs " + w2.wepon) {
+        System.out.println(w1.getName() + "vs " + w2.getName() +"\n");
+        for (int i = 0; i < 3; i++) {
+            String resp = w1.weapom() + " vs " + w2.weapom();
+            System.out.println(resp);
+            switch (resp) {
                 case "SCISSOR vs PAPER":
-                    System.out.println(w1.name + " Win");
+                    w1.wins();
                     break;
                 case "PAPER vs SCISSOR":
-                    System.out.println(w2.name + " Win");
+                    w2.wins();
                     break;
                 case "PAPER vs ROCK":
-                    System.out.println(w1.name + " Win");
+                    w1.wins();
                     break;
                 case "ROCK vs PAPER":
-                    System.out.println(w2.name + " Win");
+                    w2.wins();
                     break;
                 case "ROCK vs SCISSOR":
-                    System.out.println(w1.name + " Win");
+                    w1.wins();
                     break;
                 case "SCISSOR vs ROCK":
-                    System.out.println(w2 + "Win");
+                    w2.wins();
                     break;
                 default:
-                    System.out.println("drawn");
                     break;
+            }
+        }
+        if (w1.getWins()< w2.getWins()){
+            System.out.println("\nO "+w2.getName()+" Ganhou");
+        }
+        else if (w1.getWins()>w2.getWins())
+        {
+            System.out.println("\nO "+w1.getName()+" Ganhou");
+        }
+        else {
+            System.out.println("\nCada um paga o seu");
         }
     }
+
 }
